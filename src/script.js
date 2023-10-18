@@ -87,8 +87,24 @@ let effects = [
 let suits = ["Spades", "Hearts", "Clubs", "Diamonds"];
 let cards = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 
-const shuffled = effects.sort(() => 0.5 - Math.random());
-let selected = shuffled.slice(0, 52);
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  while (currentIndex > 0) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+shuffle(effects);
+
+let selected = effects.slice(0, 52);
 
 let suit = 0;
 let card = 0;
