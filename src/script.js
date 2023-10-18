@@ -97,7 +97,7 @@ selected.forEach(function(entry) {
   if(card === 0)
         document.getElementById('desk-of-plenty').innerHTML += '<h3>' + suits[suit] + '</h3>';
 
-  document.getElementById('desk-of-plenty').innerHTML += '<li>' + cards[card] + " of " + suits[suit] + " : " + entry + '</li>';  
+  document.getElementById('desk-of-plenty').innerHTML += '<li>' + (cards[card] + " of " + suits[suit] + " : ").bold() + entry + '</li>';  
   card += 1;
   if(card === 13)
   {
