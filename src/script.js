@@ -111,7 +111,7 @@ let card = 0;
 
 selected.forEach(function(entry) {
   if(card === 0)
-        document.getElementById('desk-of-plenty').innerHTML += '<h3>' + suits[suit] + '</h3>';
+        document.getElementById('desk-of-plenty').innerHTML +=  '<img src= img/' + suits[suit] + '.png>';
 
   document.getElementById('desk-of-plenty').innerHTML += '<li>' + (cards[card] + " of " + suits[suit] + " : ").bold() + entry + '</li>';  
   card += 1;
@@ -119,5 +119,6 @@ selected.forEach(function(entry) {
   {
     card = 0;
     suit +=1;
+	document.getElementById('desk-of-plenty').innerHTML +=  '<br>';
   }    
 });
